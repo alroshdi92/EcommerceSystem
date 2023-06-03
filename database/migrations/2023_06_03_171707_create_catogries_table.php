@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catageries', function (Blueprint $table) {
+        Schema::create('catogries', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->unsignedInteger('product_id');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('catageries');
+        Schema::dropIfExists('catogries');
     }
 };
