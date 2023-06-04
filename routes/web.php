@@ -31,12 +31,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('product')->group(function () {
+    Route::get('/','ProductssController@index');
+    Route::get('create','ProductssController@create');
+    Route::get('edit{id}','ProductssController@edit');
+    Route::get('delete{id}','ProductssController@destroy');
+    Route::post('edit{id}','ProductssController@update');
+    Route::post('store','ProductssController@store');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});

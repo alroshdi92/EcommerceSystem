@@ -22,7 +22,7 @@ class ProductssController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -44,15 +44,16 @@ class ProductssController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(productss $productss)
+    public function edit($id)
     {
         $data['productsses']=Product::findOrFail($id);
         return view('product.edit');
+    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateproductssRequest $request, productss $productss)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -62,6 +63,9 @@ class ProductssController extends Controller
      */
     public function destroy(productss $productss)
     {
-        //
+       $record=Product::findOrFail($id);
+       $record->delete();
+
+       return back();
     }
 }
