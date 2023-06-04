@@ -13,7 +13,8 @@ class ProductssController extends Controller
      */
     public function index()
     {
-        //
+        $data['productsses']=Product::all();
+        return view('product.index');
     }
 
     /**
@@ -45,8 +46,8 @@ class ProductssController extends Controller
      */
     public function edit(productss $productss)
     {
-        //
-    }
+        $data['productsses']=Product::findOrFail($id);
+        return view('product.edit');
 
     /**
      * Update the specified resource in storage.
