@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('catogries', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }
