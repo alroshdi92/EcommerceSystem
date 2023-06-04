@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('cart_id');
+            $table->unsignedInteger('product_id');
             $table->string('details_deliver');
+            $table->string('name_visitor');
+            $table->string('phone_visitor');
+            $table->string('address_visitor');
+            $table->string('order_status');
             $table->timestamps();
         });
     }

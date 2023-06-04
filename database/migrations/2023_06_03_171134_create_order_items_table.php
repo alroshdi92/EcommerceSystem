@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('usrr_id');
             $table->unsignedInteger('product_id');
-            $table->unsignedInteger('cart_id');
+            $table->unsignedInteger('order_id');
             $table->integer('quantity');
+            $table->decimal('totalPrice'),
             $table->timestamps();
         });
     }
